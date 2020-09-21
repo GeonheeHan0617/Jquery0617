@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  -->
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+        /*() window.onload = function() {
+ 
+             var btn = document.getElementById("btn");
+             btn.onclick = function () {
+                 alert("알림창 입니다. !! + +");
+             }   
+             // 체인지 이벤트
+             var tag = document.getElementById("tag");
+             tag.onchange = function () {
+                 console.log("change event 1")
+             }
+         }*/
+
+        $(document).ready(function () {
+            /*var btn = document.getElementById("btn"); //javascipt에서는 onclick이라고 사용함.
+            btn.onclick= function () {
+                alert("알림창 입니다. !! + +");
+            }*/
+            $("#btn").click(function () {               //Jquery 에서는 on 사용 못함.
+                alert("이벤트 등록")
+            })
+
+            /* var tag = document.getElementById("tag"); //javascipt에서는 onclick이라고 사용함.
+             tag.onchange = function() {
+                 console.log("Do you know change event?");
+             }*/
+            $("#tag").change(function () {              //Jquery 에서는 on 사용 못함.
+                console.log("Do you know change event?");
+            })
+        });
+
+    </script>
+
+    <button type="button" id="btn">event test</button>
+    <input type="text" id="tag">
+
+
+</body>
+
+</html>

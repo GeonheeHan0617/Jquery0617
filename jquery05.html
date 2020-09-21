@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 인터넷 사용시 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+
+    <ul id="test">
+        <li>태크1</li>
+        <li>태크2</li>
+        <li>태크3</li>
+
+
+    </ul>
+
+
+    <script>
+        // == li에 전부를 동일한 이벤틀를 건다.==
+        // 1st
+        // 테그에 inline방식으로 동일 함수를 실행시키는 방법  onclick="~~"
+
+        // 2nd == li 를 선택해와서 반복문으로 이벤트 등록
+        /*  var test = document.getElementById("test");
+          var list = test.querySelectorAll("li");
+          for(var i = 0; i<list.length; i++ ){
+              list[i].onclick = function () {
+                  alert("event !! ")
+              }
+          }
+          console.log(list); */
+
+        //3nd   
+        /*   var test = document.getElementById("test");
+           test.onclick = function () {
+               if(event.tagName == "UL") return;
+       
+               alert("Event!~!@#~!#!#@!#!");
+       
+           }*/
+
+        // 4nd  == Jquery 
+      /*  $("#test").on("click", "li", function () {
+            alert("Event shouting~!");
+
+        })*/
+
+
+
+    </script>
+
+    <div id="box">
+        <!-- <a href='#'>태그1</a><br> -->
+    </div>
+
+    <script>
+        
+        // Jquery의 일반이벤트
+        /* $("#box a[href='#']").click(function(){
+               alert("event operating?");
+
+        }) */
+
+        //Jquery 의 이벤트 전파 방식
+        $("#box").on("click","a[href='#']", function(){
+            alert("Do you know enven operating? ");
+
+        })
+
+        var str ="";
+        str += "<a href='#'>태그1</a>"
+        str += "<a href='#'>태그2</a>"
+        str += "<a href='#'>태그3</a>"
+  //      $("#box").html(str);
+
+        $("#box").html(str).val();
+        console.log(str);   
+
+    </script>
+
+</body>
+
+</html>
